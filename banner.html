@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Promocional - Frete Grátis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .banner {
+            width: 90%;
+            max-width: 600px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+        .banner h1 {
+            color: white;
+            font-size: 28px;
+            margin: 0 0 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .banner p {
+            color: white;
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            background: #fff;
+            color: #ff4b2b;
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .emoji {
+            font-size: 24px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>🔥 PROMOÇÃO RELÂMPAGO! 🔥</h1>
+        <p class="emoji">🚚 FRETE GRÁTIS PARA TODO BRASIL!</p>
+        <p class="emoji">⏰ SÓ HOJE — NÃO PERCA!</p>
+        <a href="https://jamantatim.github.io/minha-vitrine/" class="btn">👉 COMPRE AGORA</a>
+    </div>
+</body>
+</html>
