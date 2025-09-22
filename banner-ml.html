@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Facebook - Frete Grátis + Mercado Livre</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .banner {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            border-radius: 10px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><text x="0" y="15" fill="rgba(255,255,255,0.05)" font-size="14">Mercado Livre</text></svg>');
+            background-repeat: repeat;
+        }
+        .logo-text {
+            font-size: 60px;
+            font-weight: 900;
+            color: #ffe600;
+            text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            margin: 0 0 10px;
+            letter-spacing: -1px;
+        }
+        .subtitle {
+            font-size: 36px;
+            margin: 0 0 15px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        .highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 28px;
+            margin: 15px 0;
+            display: inline-block;
+            backdrop-filter: blur(5px);
+        }
+        .btn {
+            margin-top: 30px;
+            padding: 20px 50px;
+            background: #ffe600;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 34px;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        .trust {
+            margin-top: 30px;
+            font-size: 24px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="logo-text">MERCADO LIVRE</div>
+        <div class="subtitle">🔥 PROMOÇÃO RELÂMPAGO! 🔥</div>
+        <div class="highlight">🚚 FRETE GRÁTIS</div>
+        <div class="highlight">⏰ SÓ HOJE — NÃO PERCA!</div>
+        <a href="#" class="btn">👉 COMPRE AGORA</a>
+        <div class="trust">Compre com segurança e receba rápido!</div>
+    </div>
+</body>
+</html>
