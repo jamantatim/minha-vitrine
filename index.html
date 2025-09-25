@@ -3,203 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 Produtos com Frete Grátis + Promo!</title>
+    <title>🔥 PROMOÇÃO NO MERCADO LIVRE + FRETE GRÁTIS!</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 20px;
             margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
+            width: 95%;
+            max-width: 1200px;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
-        .header {
-            background: linear-gradient(135deg, #ff6600, #e63946);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
+        .ml-logo {
+            font-size: 48px;
+            font-weight: 900;
+            color: #ffe600;
+            text-shadow: 2px 2px 0 #000;
+            margin: 0 0 20px;
         }
-        .header h1 {
-            margin: 0;
-            font-size: 28px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-        .header p {
-            margin: 10px 0 0;
-            font-size: 16px;
-            opacity: 0.9;
+        h1 {
+            font-size: 32px;
+            margin: 0 0 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }
         .products {
-            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+            justify-items: center;
         }
         .product {
-            background: #fdfdfd;
-            margin-bottom: 25px;
-            padding: 25px;
+            background: rgba(255,255,255,0.15);
             border-radius: 15px;
-            border: 1px solid #eee;
-            transition: transform 0.25s, box-shadow 0.25s;
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
         .product:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-color: #ff6600;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid rgba(255,255,255,0.3);
         }
         .product h3 {
-            margin: 0 0 12px;
-            color: #2d3748;
-            font-size: 19px;
-            line-height: 1.4;
-        }
-        .tag {
-            display: inline-block;
-            background: #48bb78;
-            color: white;
-            font-size: 13px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 10px;
+            margin: 0 0 8px;
+            font-size: 18px;
             font-weight: bold;
+        }
+        .product .price {
+            font-weight: bold;
+            color: #ffe600;
+            font-size: 20px;
+            margin: 0 0 15px;
         }
         .btn {
-            display: block;
-            background: linear-gradient(to right, #ff6600, #e63946);
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 12px;
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background: #ffe600;
+            color: #2c3e50;
             font-weight: bold;
-            font-size: 17px;
-            text-align: center;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             transition: all 0.3s;
+            margin-top: 10px;
         }
         .btn:hover {
-            background: linear-gradient(to right, #e65c00, #c2303b);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(230, 57, 70, 0.4);
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        .highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 22px;
+            margin: 15px 0;
+            display: inline-block;
+            font-weight: bold;
         }
         .footer {
-            text-align: center;
-            padding: 25px 20px 20px;
-            color: #718096;
-            font-size: 14px;
-            border-top: 1px solid #edf2f7;
+            margin-top: 30px;
+            font-size: 16px;
+            opacity: 0.9;
         }
-        @media (max-width: 600px) {
-            .header h1 { font-size: 24px; }
-            .product h3 { font-size: 17px; }
-            .btn { font-size: 16px; padding: 14px 20px; }
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            h1 { font-size: 26px; }
+            .ml-logo { font-size: 36px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🚀 PRODUTOS COM FRETE GRÁTIS!</h1>
-            <p>Seleção especial com os melhores preços e promoções</p>
-        </div>
+        <div class="ml-logo">MERCADO LIVRE</div>
+        <h1>🔥 PRODUTOS EM PROMOÇÃO + FRETE GRÁTIS!</h1>
+        
+        <div class="highlight">🚚 Entrega para todo Brasil</div>
+        <div class="highlight">⏰ Promoção por tempo limitado!</div>
 
         <div class="products">
-
+            <!-- Produto 1 - Webcam Logitech -->
             <div class="product">
-                <span class="tag">🔥 PROMOÇÃO</span>
-                <h3>Cabo Carregador USB-C 2M 100W Turbo Black Braid</h3>
-                <a href="https://mercadolivre.com/sec/1Cp1UC4" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1AKiWNSLnYlNcLA2HDC1Ne31tk8-jEfDK" alt="Webcam Full HD Logitech Brio 100 Grafite">
+                <h3>Webcam Full HD Logitech Brio 100 – Grafite</h3>
+                <div class="price">R$ 232,82</div>
+                <a href="https://mercadolivre.com/sec/2VVNXe5" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 2 - Suporte Notebook -->
             <div class="product">
-                <span class="tag">⚡ TURBO</span>
-                <h3>Carregador Portátil Power Bank 10000mAh 18W</h3>
-                <a href="https://mercadolivre.com/sec/1vxKwi4" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1OYfNHXqXpS9PdUgray-gd5suE_LmFai4" alt="Suporte Base Notebook C3tech Gamer">
+                <h3>Suporte Notebook C3tech Gamer 4 Coolers LED</h3>
+                <div class="price">R$ 88,00</div>
+                <a href="https://mercadolivre.com/sec/2uHyD2D" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 3 - Smartphone Moto G75 -->
             <div class="product">
-                <span class="tag">🎧 SOM</span>
-                <h3>Fone de Ouvido Bluetooth ANC com Microfone</h3>
-                <a href="https://mercadolivre.com/sec/2jJPZRk" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1nkkiEU-OwyP6F5ukRQ2bRi2yQhUIwiYx" alt="Smartphone Moto G75 5G 256GB">
+                <h3>Smartphone Moto G75 5G 256GB Vegan Leather</h3>
+                <div class="price">R$ 1.570,00</div>
+                <a href="https://mercadolivre.com/sec/2YBnDnK" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 4 - Power Bank -->
             <div class="product">
-                <span class="tag">🎮 GAMER</span>
-                <h3>Controle Sem Fio para PC, Android e Emuladores</h3>
-                <a href="https://mercadolivre.com/sec/1nuhex1" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=106lZZk_KKNEFrU4U4iFcdVOabbV-Ib1s" alt="Power Bank 20.000mAh Turbo">
+                <h3>Power Bank Carregador Portátil Turbo 20.000mAh</h3>
+                <div class="price">R$ 91,14</div>
+                <a href="https://mercadolivre.com/sec/2Zq1a6g" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 5 - Película iPhone -->
             <div class="product">
-                <span class="tag">💻 OFFICE</span>
-                <h3>Suporte para Notebook com Refrigeração e Ajuste de Altura</h3>
-                <a href="https://mercadolivre.com/sec/1hFdNS7" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1CbLT9Ibfv7erXRmxtqURKg_K3o_9G5sp" alt="Película Privacidade 3D iPhone">
+                <h3>Película Privacidade 3D Com Aplicador iPhone</h3>
+                <div class="price">R$ 23,25</div>
+                <a href="https://mercadolivre.com/sec/2gkmPUJ" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 6 - Óculos Gamer -->
             <div class="product">
-                <span class="tag">📹 STREAM</span>
-                <h3>Webcam Full HD 1080p com Microfone Embutido</h3>
-                <a href="https://mercadolivre.com/sec/2uHyD2D" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=17mC_XW2kTFtnhv75j5SsQiLX1bhcg8VB" alt="Óculos Gamer Anti Luz Azul">
+                <h3>Óculos Gamer Descanso Telas Anti Luz Azul</h3>
+                <div class="price">R$ 39,89</div>
+                <a href="https://mercadolivre.com/sec/2zWkuu2" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 7 - Microfone Lapela -->
             <div class="product">
-                <span class="tag">🎤 ÁUDIO</span>
-                <h3>Microfone de Lapela para Celular (Android/iOS)</h3>
-                <a href="https://mercadolivre.com/sec/2VVNXe5" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1oM8BJqB1vHOTMbVn3a4EdrImkDJeOdz3" alt="Microfone Lapela Sem Fio Hold On">
+                <h3>Microfone Lapela Sem Fio Anti Ruído Hold On</h3>
+                <div class="price">R$ 66,14</div>
+                <a href="https://mercadolivre.com/sec/1eGAzLS" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 8 - Lâmpada Smart -->
             <div class="product">
-                <span class="tag">👓 SAÚDE</span>
-                <h3>Óculos de Luz Azul para Tela de Computador e Celular</h3>
-                <a href="https://mercadolivre.com/sec/1eGAzLS" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1H6A0VQQjf_Ze6M_rL-0cltJg8gwm9UIW" alt="Lâmpada LED Smart Intelbras">
+                <h3>Lâmpada LED Wi-fi Smart Intelbras 16M Cores</h3>
+                <div class="price">R$ 30,80</div>
+                <a href="https://mercadolivre.com/sec/1nuhex1" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 9 - Película Redmi -->
             <div class="product">
-                <span class="tag">🔌 CARGA</span>
-                <h3>Cabo USB-C Trançado 3M Carregamento Rápido 60W</h3>
-                <a href="https://mercadolivre.com/sec/2zWkuu2" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=144wS_YTcO4izff86QzZv7dBOJmF_dT3Y" alt="Kit Película 3D Vidro Redmi Note 13">
+                <h3>Kit 2 Película 3D Vidro Para Redmi Note 13</h3>
+                <div class="price">R$ 13,58</div>
+                <a href="https://mercadolivre.com/sec/1Cp1UC4" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 10 - TV Hisense -->
             <div class="product">
-                <span class="tag">📱 CELULAR</span>
-                <h3>Película de Vidro Temperado (Kit 3 Unidades)</h3>
-                <a href="https://mercadolivre.com/sec/2gkmPUJ" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1O7ppk6l_sDErQa_Q4CYQDbRqWs6Iaycz" alt="Smart TV Hisense 65 Polegadas 4K">
+                <h3>Smart TV Hisense 65" 4K UHD com Alexa</h3>
+                <div class="price">R$ 3.004,70</div>
+                <a href="https://mercadolivre.com/sec/1vxKwi4" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 11 - Fone Soundcore -->
             <div class="product">
-                <span class="tag">💡 CASA</span>
-                <h3>Lâmpada Inteligente Wi-Fi RGB com Controle por App</h3>
-                <a href="https://mercadolivre.com/sec/1Am6tbW" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1rCL_l9XTU63qfP6y00brWy6an5Vg8d1K" alt="Fone Soundcore P30i Bluetooth">
+                <h3>Fone Soundcore P30i Bluetooth 5.4 ANC</h3>
+                <div class="price">R$ 208,35</div>
+                <a href="https://mercadolivre.com/sec/1vxKwi4" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 12 - Controle Ipega -->
             <div class="product">
-                <span class="tag">🔋 POWER</span>
-                <h3>Carregador de Parede 65W USB-C + USB-A (Rápido)</h3>
-                <a href="https://mercadolivre.com/sec/2oMc3zM" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1gZA8fLvoFsI6Nr_8f5GrHF5GzzFNkZSl" alt="Controle Bluetooth Gamepad Ipega">
+                <h3>Controle Bluetooth Gamepad Joystick Ipega</h3>
+                <div class="price">R$ 117,81</div>
+                <a href="https://mercadolivre.com/sec/1hFdNS7" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 13 - Conjunto Panelas -->
             <div class="product">
-                <span class="tag">🛡️ PROTEÇÃO</span>
-                <h3>Capa de Silicone para Notebook 15.6" Anti-Risco</h3>
-                <a href="https://mercadolivre.com/sec/2qda61f" class="btn" target="_blank">🛒 COMPRAR AGORA</a>
+                <img src="https://drive.google.com/uc?export=download&id=1SrPBANss_sQW6v1yl9D2O_SEmTA1gigk" alt="Conjunto Panelas Antiaderente 10 Peças">
+                <h3>Conjunto Panelas Antiaderente 10 Peças</h3>
+                <div class="price">R$ 184,90</div>
+                <a href="https://mercadolivre.com/sec/2MwUUYd" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
             </div>
 
+            <!-- Produto 14 - Capa Samsung -->
+            <div class="product">
+                <img src="https://drive.google.com/uc?export=download&id=1it_KtYteVmnqtXwZEj-cN2pyJNWJS7am" alt="Capa Anti Impacto Samsung Galaxy">
+                <h3>Capa Anti Impacto + Película Samsung Galaxy</h3>
+                <div class="price">R$ 14,48</div>
+                <a href="https://mercadolivre.com/sec/1vxKwi4" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
+            </div>
+
+            <!-- Produto 15 - Cabo USB-C -->
+            <div class="product">
+                <img src="https://drive.google.com/uc?export=download&id=13OZg3X0Vl2DR3HNvJGLZUKMKC_Au3XN4" alt="Cabo USB-C 2m 100W Turbo">
+                <h3>Cabo USB-C 2m 100W Turbo Black Braid</h3>
+                <div class="price">R$ 23,74</div>
+                <a href="https://mercadolivre.com/sec/1Cp1UC4" class="btn" target="_blank" rel="noopener noreferrer">🛒 Ver no ML</a>
+                <a href="https://wa.me/5511986174159" class="btn" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
+            </div>
         </div>
 
         <div class="footer">
-            <p>Atualizado em: <span id="data"></span> • Links de afiliado • Frete grátis em todos os produtos</p>
+            📲 Fale conosco no WhatsApp: <a href="https://wa.me/5511986174159" style="color:#ffe600; text-decoration:underline;" target="_blank" rel="noopener noreferrer">+55 11 98617-4159</a><br>
+            🌐 Acesse nossa vitrine completa: <a href="https://jamantatim.github.io/minha-vitrine/" style="color:#ffe600; text-decoration:underline;" target="_blank" rel="noopener noreferrer">jamantatim.github.io/minha-vitrine</a>
         </div>
     </div>
-
-    <script>
-        document.getElementById('data').textContent = new Date().toLocaleDateString('pt-BR', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric'
-        });
-    </script>
 </body>
 </html>
